@@ -1,0 +1,65 @@
+
+
+
+
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+<div class="container p-5 my-5 bg-primary text-white">
+  <h1>Animaux</h1>
+ </div>
+    {% for animal in animaux %}
+        <div class="container mt-5">
+        <div class="row">   
+          <h2><a href="{% url 'animal_detail' id_animal=animal.id_animal %}">{{ animal.id_animal }}</a></h2>  
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">Etat: {{ animal.etat }}</div>
+          <div class="col-sm-4">Lieu: {{ animal.lieu }}</div>
+          <div class="w-100"></div>    
+        </div>
+     </div>
+            
+     {% endfor %}
+     <br><br><br>
+     
+<div class="container p-5 my-5 bg-primary text-white">
+  <h1>Equipements</h1>
+ </div>
+
+     {% for equipement in equipements %}
+     <div class="container mt-6">
+      <div class="row">   
+        <h2><a>{{ animal.id_animal }}</a></h2> 
+        <div class="col-sm-4"><a>{{ equipement.id_equip }}</a></div>
+        <div class="col-sm-4">disponibilite: {{ equipement.disponibilite }}</div>
+        <div class="w-100"></div>    
+      </div>
+   </div>
+   
+
+    {% endfor %}
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Litiere</h3>
+          <img src="https://www.consoanimo.com/media//guide-liti_re-rongeur-hamster-dans-copeaux-de-bois-600x400.jpg" height="100px" width="200px" />
+        </div>
+        <div class="col-sm-4">
+          <h3>Nid</h3>
+          <img src="https://nacmagazine.files.wordpress.com/2018/10/carefresh-colorful-creations-blue.jpg" height="100px" width="200px" />
+        </div>
+        <div class="col-sm-4">
+          <h3>Roue</h3>        
+          <img src="https://www.cdiscount.com/pdt2/2/3/8/1/700x700/auc9399446216238/rw/cikonielf-roue-de-hamster-jouet-de-roue-de-course.jpg" height="100px" width="200px" />
+        </div>
+        <br><br>
+        <h3>Mangeoire</h3>        
+        <img src="https://ae01.alicdn.com/kf/H509bdc548160489f8d12075a9edfcfadG/Mangeoire-cochon-d-inde-automatique-en-acrylique-Transparent-pour-Hamster-h-risson-maison-Cage-Hamster-suspendue.jpg_Q90.jpg_.webp" height="100px" width="200px" />
+      </div>
+      
+      </div>
+
+{% endblock %}
+
+
