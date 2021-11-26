@@ -88,13 +88,13 @@ def animal_detail(request, id_animal):
     if form.is_valid():
         nouveau_lieu = get_object_or_404(Equipement, id_equip=animal.lieu.id_equip)
         if nouveau_lieu.id_equip == "mangeoire":
-             nourrir(animal,ancien_lieu, nouveau_lieu)
+            message= nourrir(animal,ancien_lieu, nouveau_lieu)
         if nouveau_lieu.id_equip == "roue":
-             divertir(animal,ancien_lieu, nouveau_lieu)
+             message=divertir(animal,ancien_lieu, nouveau_lieu)
         if nouveau_lieu.id_equip == "nid":
             message= coucher(animal,ancien_lieu, nouveau_lieu)
         if nouveau_lieu.id_equip == "litière":
-             réveiller(animal,ancien_lieu, nouveau_lieu)
+             message=réveiller(animal,ancien_lieu, nouveau_lieu)
         
         form.save()
         return redirect('animal_detail', id_animal=id_animal)
